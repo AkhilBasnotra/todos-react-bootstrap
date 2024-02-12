@@ -7,9 +7,9 @@ import "./App.css";
 
 function App() {
   let myTodos = [
-    // { name: "go to college", date: "04/02/2024" },
-    // { name: "buy milk", date: "04/02/2024" },
-    // { name: "watch market", date: "04/02/2024" },
+    { name: "go to college", date: "04/02/2024" },
+    { name: "buy milk", date: "04/02/2024" },
+    { name: "watch market", date: "04/02/2024" },
   ];
 
   const [todo, setTodo] = useState(myTodos);
@@ -19,12 +19,17 @@ function App() {
     setTodo(newTodoItem);
   };
 
+  const handleDeleteButton = (todoName) => {
+    let newTodoItems = todo.filter((item) => item.name !== todoName);
+    setTodo(newTodoItems);
+  };
+
   return (
     <center className="todo-container">
       <AppName />
       <AddTodo clickHandler={handleNewItem} />
       <WelcomeMessage myTodos={todo} />
-      <TodoItems todoItems={todo} />
+      <TodoItems todoItems={todo} deleteHandler={handleDeleteButton} />
     </center>
   );
 }

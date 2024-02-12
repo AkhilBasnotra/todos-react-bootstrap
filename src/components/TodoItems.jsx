@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-let TodoItems = ({ todoItems }) => {
+let TodoItems = ({ todoItems, deleteHandler }) => {
   return (
     <>
       <div className="items-container">
@@ -9,6 +9,8 @@ let TodoItems = ({ todoItems }) => {
             todoName={item.name}
             todoDate={item.date}
             key={Math.random()}
+            deleteHandler={deleteHandler}
+            todoItems={todoItems}
           />
         ))}
       </div>
