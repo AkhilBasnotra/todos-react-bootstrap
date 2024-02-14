@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./AddTodo.module.css";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 function AddTodo({ clickHandler }) {
   const [todoName, setTodoName] = useState("");
@@ -45,7 +47,7 @@ function AddTodo({ clickHandler }) {
             className="btn btn-success kg-button"
             onClick={handleAddButtonClicked}
           >
-            Add
+            <MdOutlineAddCircleOutline />
           </button>
         </div>
       </div>
